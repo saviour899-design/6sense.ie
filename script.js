@@ -1,6 +1,19 @@
-// Wait until page is ready
+// Run once the DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // Helpers
+  const signupModal = document.getElementById("signup-modal");
+  const memoriesModal = document.getElementById("memories-modal");
+
+  const openSignupBtn = document.getElementById("open-signup");
+  const openMemoriesBtn = document.getElementById("open-memories");
+
+  const signupForm = document.getElementById("signup-form");
+  const signupMsg = document.getElementById("signup-message");
+
+  const memoriesForm = document.getElementById("memories-form");
+  const memoriesMsg = document.getElementById("memories-message");
+  const memFileInput = document.getElementById("mem-file");
+  const memConsent = document.getElementById("mem-consent");
+
   const openModal = (modal) => {
     if (modal) modal.setAttribute("aria-hidden", "false");
   };
@@ -9,22 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (modal) modal.setAttribute("aria-hidden", "true");
   };
 
-  // Get DOM elements
-  const signupModal = document.getElementById("signup-modal");
-  const memoriesModal = document.getElementById("memories-modal");
-
-  const openSignupBtn = document.getElementById("open-signup");
-  const openMemoriesBtn = document.getElementById("open-memories");
-
   // Open buttons
   if (openSignupBtn && signupModal) {
     openSignupBtn.addEventListener("click", () => openModal(signupModal));
   }
 
   if (openMemoriesBtn && memoriesModal) {
-    openMemoriesBtn.addEventListener("click", () =>
-      openModal(memoriesModal)
-    );
+    openMemoriesBtn.addEventListener("click", () => openModal(memoriesModal));
   }
 
   // Close via [data-close]
@@ -36,20 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     el.addEventListener("click", () => closeModal(memoriesModal));
   });
 
-  // Close on ESC key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeModal(signupModal);
-      closeModal(memoriesModal);
-    }
-  });
-
-  // Prevent clicks inside the modal from closing it
-  document.querySelectorAll(".modal-dialog").forEach((dialog) => {
-    dialog.addEventListener("click", (e) => e.stopPropagation());
-  });
-
-  // Clicking the dark backdrop closes the modal (the backdrop has data-close)
+  // Close when clicking on the dark backdrop
   document.querySelectorAll(".modal").forEach((modal) => {
     modal.addEventListener("click", (e) => {
       if (e.target.classList.contains("modal-backdrop")) {
@@ -59,16 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // -----------------------------
-  // JOIN THE LIST FORM (front-end only)
-  // -----------------------------
-  const signupForm = document.getElementById("signup-form");
-  const signupMsg = document.getElementById("signup-message");
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal(signupModal);
+      closeModal(memoriesModal);
+    }
+  });
 
+  // Stop clicks inside the dialog from closing the modal
+  document.querySelectorAll(".modal-dialog").forEach((dialog) => {
+    dialog.addEventListener("click", (e) => e.stopPropagation());
+  });
+
+  // JOIN THE LIST FORM (front-end only for now)
   if (signupForm && signupMsg) {
     signupForm.addEventListener("submit", (e) => {
-      // If you later connect to Google Forms, remove this preventDefault
-      e.preventDefault();
+      e.preventDefault(); // remove this later if you connect Google Forms
 
       signupMsg.textContent = "You’re on the list. We’ll be in touch.";
       signupMsg.classList.remove("error");
@@ -77,19 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // -----------------------------
   // MEMORIES FORM (front-end only)
-  // -----------------------------
-  const memoriesForm = document.getElementById("memories-form");
-  const memoriesMsg = document.getElementById("memories-message");
-  const memFileInput = document.getElementById("mem-file");
-  const memConsent = document.getElementById("mem-consent");
-
-  if (memoriesForm && memoriesMsg) {
+  if (memoriesForm && memoriesMsg && memFileInput && memConsent) {
     memoriesForm.addEventListener("submit", (e) => {
       e.preventDefault();
-
-      if (!memFileInput || !memConsent) return;
 
       if (!memFileInput.files.length || !memConsent.checked) {
         memoriesMsg.textContent = "Please upload a file and confirm consent.";
