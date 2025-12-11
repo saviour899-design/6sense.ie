@@ -28,9 +28,24 @@ body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   color: var(--text);
-  background: #000 url("bg-red.jpg") center center / cover fixed no-repeat;
+
+  /* 🔥 MOBILE-FRIENDLY BACKGROUND FIX */
+  background-color: #000;
+  background-image: url("bg-red.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll; /* important: not fixed */
+
   position: relative;
   overflow-x: hidden;
+}
+
+/* Optional: keep parallax on desktop only */
+@media (min-width: 900px) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 body::before {
@@ -169,7 +184,7 @@ body::before {
 }
 
 /* -------------------------------------------------- */
-/* NEW INSTAGRAM LOGO UNDER THE CARD                 */
+/* INSTAGRAM LOGO SECTION                             */
 /* -------------------------------------------------- */
 
 .socials {
@@ -200,7 +215,7 @@ body::before {
   text-align: center;
 }
 
-/* Modals */
+/* MODALS */
 
 .modal {
   position: fixed;
