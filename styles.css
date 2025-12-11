@@ -25,19 +25,38 @@ body {
 }
 
 /* -------------------------------------------------- */
-/* BACKGROUND USING AN <img> (MOBILE-SAFE)            */
+/* GLOBAL FADE-IN ANIMATION                           */
+/* -------------------------------------------------- */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInPage 1.2s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------------------------- */
+/* BACKGROUND IMAGE (mobile safe)                     */
 /* -------------------------------------------------- */
 
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   color: var(--text);
-  background-color: #000; /* fallback if image fails */
-  position: relative;
+  background-color: #000; /* fallback */
   overflow-x: hidden;
+  position: relative;
 }
 
-/* Full-screen background image behind everything */
 .bg-wrap {
   position: fixed;
   inset: 0;
@@ -48,10 +67,12 @@ body {
 .bg-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* keeps it filling the screen */
+  object-fit: cover;
   display: block;
 }
 
+/* -------------------------------------------------- */
+/* LAYOUT                                             */
 /* -------------------------------------------------- */
 
 .page {
@@ -68,14 +89,21 @@ body {
   padding: 2.75rem 1.4rem 1.5rem;
 }
 
+/* -------------------------------------------------- */
+/* HERO CARD                                          */
+/* -------------------------------------------------- */
+
 .hero-inner {
+  opacity: 0;
+  animation: fadeInPage 1.6s ease-out forwards;
+  animation-delay: 0.3s;
+
   width: 100%;
   max-width: 520px;
   margin: 0 auto;
   border-radius: var(--radius-lg);
   padding: 2.1rem 2rem 1.8rem;
 
-  /* soft dark card */
   background: linear-gradient(
       145deg,
       rgba(0, 0, 0, 0.55),
@@ -94,21 +122,16 @@ body {
 .hero-header {
   display: flex;
   justify-content: center;
-  position: relative;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .brand-logo {
   width: 180px;
   max-width: 60vw;
-  height: auto;
-  display: block;
 }
+
+/* -------------------------------------------------- */
+/* HERO CONTENT & BUTTONS                            */
+/* -------------------------------------------------- */
 
 .hero-content {
   text-align: center;
@@ -130,7 +153,6 @@ body {
   flex-wrap: wrap;
   gap: 0.9rem;
   justify-content: center;
-  margin-top: 0.3rem;
 }
 
 .btn {
@@ -147,34 +169,28 @@ body {
   gap: 0.4rem;
   text-transform: lowercase;
   letter-spacing: 0.08em;
-  transition:
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast),
-    background var(--transition-fast),
-    color var(--transition-fast),
-    border-color var(--transition-fast),
-    opacity var(--transition-fast);
+  transition: 0.15s ease-out;
 }
 
 .btn.primary {
   background: radial-gradient(circle at top left, #ffffff, #f5f15a 65%);
   color: #000;
-  box-shadow: 0 14px 32px rgba(245, 241, 90, 0.6);
+  box-shadow: 0 12px 32px rgba(245, 241, 90, 0.5);
 }
 
 .btn.primary:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   box-shadow: 0 18px 40px rgba(245, 241, 90, 0.75);
 }
 
 .btn.ghost {
-  background: rgba(10, 10, 22, 0.96);
+  background: rgba(15, 15, 25, 0.95);
   color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn.ghost:hover {
-  background: rgba(18, 18, 32, 0.99);
+  background: rgba(22, 22, 35, 1);
 }
 
 .btn.full-width {
@@ -182,7 +198,7 @@ body {
 }
 
 /* -------------------------------------------------- */
-/* INSTAGRAM LOGO SECTION                             */
+/* INSTAGRAM ICON                                     */
 /* -------------------------------------------------- */
 
 .socials {
@@ -196,7 +212,7 @@ body {
   height: 28px;
   opacity: 0.9;
   transition: 0.2s ease-out;
-  filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
 }
 
 .insta-icon:hover {
@@ -204,6 +220,8 @@ body {
   transform: scale(1.12);
 }
 
+/* -------------------------------------------------- */
+/* FOOTER                                             */
 /* -------------------------------------------------- */
 
 .site-footer {
@@ -213,7 +231,9 @@ body {
   text-align: center;
 }
 
-/* MODALS */
+/* -------------------------------------------------- */
+/* MODALS                                             */
+/* -------------------------------------------------- */
 
 .modal {
   position: fixed;
@@ -240,8 +260,8 @@ body {
   max-width: 480px;
   width: 90%;
   background:
-    radial-gradient(circle at top, rgba(245, 241, 90, 0.2), transparent 55%),
-    rgba(5, 5, 12, 0.96);
+    radial-gradient(circle at top, rgba(245, 241, 90, 0.15), transparent 55%),
+    rgba(5, 5, 12, 0.95);
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.26);
   box-shadow: var(--shadow-modal);
@@ -259,12 +279,6 @@ body {
   color: var(--muted);
   font-size: 1.4rem;
   cursor: pointer;
-  line-height: 1;
-  padding: 0.2rem;
-}
-
-.modal-close:hover {
-  color: var(--text);
 }
 
 .modal-title {
@@ -289,16 +303,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  font-size: 0.84rem;
 }
 
 .form-field input,
 .form-field textarea {
   border-radius: 10px;
   border: 1px solid var(--border);
-  background: rgba(7, 7, 17, 0.97);
+  background: rgba(10, 10, 20, 0.95);
   color: var(--text);
-  padding: 0.6rem 0.7rem;
+  padding: 0.65rem 0.75rem;
   font-size: 0.9rem;
   outline: none;
 }
@@ -308,28 +321,20 @@ body {
   min-height: 80px;
 }
 
-.form-field input:focus,
-.form-field textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(245, 241, 90, 0.6);
-}
-
 .checkbox-field {
-  flex-direction: row;
+  display: flex;
+  gap: 0.5rem;
   align-items: flex-start;
 }
 
-.checkbox-field input[type="checkbox"] {
-  margin-top: 0.2rem;
-  margin-right: 0.55rem;
-  accent-color: var(--accent);
+.checkbox-field input {
+  margin-top: 0.15rem;
 }
 
 .form-message {
-  margin: 0;
   font-size: 0.8rem;
-  min-height: 1.1rem;
   color: var(--muted);
+  min-height: 1rem;
 }
 
 .form-message.success {
@@ -340,7 +345,9 @@ body {
   color: var(--danger);
 }
 
-/* Responsive */
+/* -------------------------------------------------- */
+/* RESPONSIVE                                          */
+/* -------------------------------------------------- */
 
 @media (max-width: 640px) {
   .hero {
@@ -349,7 +356,6 @@ body {
 
   .hero-inner {
     padding: 1.8rem 1.5rem 1.5rem;
-    border-radius: 20px;
   }
 
   .hero-actions {
@@ -362,6 +368,5 @@ body {
 
   .modal-dialog {
     padding: 1.7rem 1.25rem 1.4rem;
-    border-radius: 18px;
   }
 }
