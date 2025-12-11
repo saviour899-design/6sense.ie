@@ -24,30 +24,51 @@ body {
   height: 100%;
 }
 
+/* -------------------------------------------------- */
+/* BACKGROUND — FIXED FOR MOBILE                      */
+/* -------------------------------------------------- */
+
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   color: var(--text);
 
-  /* 🔥 MOBILE-FRIENDLY BACKGROUND FIX */
-  background-color: #000;
+  /* Mobile-safe background settings */
+  background-color: #1a0000; /* dark red, not pure black */
   background-image: url("bg-red.jpg");
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: scroll; /* important: not fixed */
+  background-attachment: scroll; /* mobile safe */
 
   position: relative;
   overflow-x: hidden;
 }
 
+/* Desktop parallax effect (optional) */
+@media (min-width: 900px) {
+  body {
+    background-attachment: fixed;
+  }
+}
+
+/* DARK OVERLAY */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85));
+  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.60));
   z-index: -1;
 }
+
+/* Lighter overlay on mobile so red shows clearly */
+@media (max-width: 640px) {
+  body::before {
+    background: rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* -------------------------------------------------- */
 
 .page {
   min-height: 100vh;
@@ -70,7 +91,6 @@ body::before {
   border-radius: var(--radius-lg);
   padding: 2.1rem 2rem 1.8rem;
 
-  /* LIGHT BLACK GRADIENT CARD */
   background: linear-gradient(
       145deg,
       rgba(0, 0, 0, 0.55),
