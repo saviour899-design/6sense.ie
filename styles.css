@@ -41,13 +41,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Optional: keep parallax on desktop only */
-@media (min-width: 900px) {
-  body {
-    background-attachment: fixed;
-  }
-}
-
 body::before {
   content: "";
   position: fixed;
