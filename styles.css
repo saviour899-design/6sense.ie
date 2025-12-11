@@ -33,17 +33,20 @@ body {
     "Segoe UI", sans-serif;
   color: var(--text);
 
-  /* Mobile-safe background settings */
-  background-color: #1a0000; /* dark red, not pure black */
+  /* ORIGINAL RED RESTORED */
+  background-color: #000;
   background-image: url("bg-red.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: scroll; /* mobile safe */
+
+  /* Desktop parallax */
+  background-attachment: fixed;
 
   position: relative;
   overflow-x: hidden;
 }
+
 
 /* Desktop parallax effect (optional) */
 @media (min-width: 900px) {
@@ -57,16 +60,24 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.60));
+  /* MUCH LIGHTER OVERLAY → brings red back */
+  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.55));
   z-index: -1;
 }
 
+
 /* Lighter overlay on mobile so red shows clearly */
 @media (max-width: 640px) {
+  body {
+    background-attachment: scroll; /* mobile safe */
+  }
+
   body::before {
-    background: rgba(0, 0, 0, 0.35);
+    /* Make overlay even lighter on phones */
+    background: radial-gradient(circle at top, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.40));
   }
 }
+
 
 /* -------------------------------------------------- */
 
