@@ -345,6 +345,15 @@ body {
   color: var(--danger);
 }
 
+.form-embed {
+  margin-top: 1rem;
+}
+
+.form-embed iframe {
+  border: none;
+}
+
+
 /* -------------------------------------------------- */
 /* RESPONSIVE                                          */
 /* -------------------------------------------------- */
