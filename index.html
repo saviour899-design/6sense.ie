@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="6Sense — sign up for early access and share your memories."
+    content="6Sense — Sign up for early access and share your memories."
   />
 
   <!-- Google Fonts -->
@@ -43,14 +43,14 @@
 
         <!-- Tagline + buttons -->
         <section class="hero-content">
-          <p class="hero-community">A FEELING BEYOND THE FIVE.</p>
+          <p class="hero-community">FEEL THE FIVE.</p>
 
           <div class="hero-actions">
             <button class="btn primary" id="open-signup">
-              join the list
+              Join the list
             </button>
             <button class="btn ghost" id="open-memories">
-              upload your memories
+              Upload your memories
             </button>
           </div>
         </section>
@@ -77,46 +77,14 @@
           Get early access to drops, tickets, and private announcements.
         </p>
 
-        <form class="form" id="signup-form">
-          <div class="form-field">
-            <label for="signup-name">Name</label>
-            <input
-              type="text"
-              id="signup-name"
-              name="name"
-              placeholder="Your name"
-              required
-            />
-          </div>
-
-          <div class="form-field">
-            <label for="signup-email">Email</label>
-            <input
-              type="email"
-              id="signup-email"
-              name="email"
-              placeholder="you@example.com"
-              required
-            />
-          </div>
-
-          <div class="form-field">
-            <label for="signup-phone">Phone number</label>
-            <input
-              type="tel"
-              id="signup-phone"
-              name="phone"
-              placeholder="+44 ..."
-              required
-            />
-          </div>
-
-          <button type="submit" class="btn primary full-width">
-            join
-          </button>
-
-          <p class="form-message" id="signup-message"></p>
-        </form>
+        <!-- Airtable JOIN LIST form embed -->
+        <div class="form-embed">
+          <iframe
+            src="https://airtable.com/embed/appYgX8TGYjTvvd6h/shrun6QB8CPZspSVK"
+            frameborder="0"
+            style="width: 100%; height: 430px; border-radius: 18px; background: transparent;"
+          ></iframe>
+        </div>
       </div>
     </div>
 
@@ -132,65 +100,14 @@
           Share photos, clips, or flyers from 6Sense moments.
         </p>
 
-        <form class="form" id="memories-form" enctype="multipart/form-data">
-          <div class="form-field">
-            <label for="mem-name">Name / @handle</label>
-            <input
-              type="text"
-              id="mem-name"
-              name="name"
-              placeholder="@yourhandle"
-              required
-            />
-          </div>
-
-          <div class="form-field">
-            <label for="mem-email">Email (optional)</label>
-            <input
-              type="email"
-              id="mem-email"
-              name="email"
-              placeholder="you@example.com"
-            />
-          </div>
-
-          <div class="form-field">
-            <label for="mem-caption">Caption / context</label>
-            <textarea
-              id="mem-caption"
-              name="caption"
-              rows="3"
-              placeholder="Where was this? What was happening?"
-              required
-            ></textarea>
-          </div>
-
-          <div class="form-field">
-            <label for="mem-file">Upload file (image or video, max 25MB)</label>
-            <input
-              type="file"
-              id="mem-file"
-              name="file"
-              accept="image/*,video/*"
-              required
-            />
-          </div>
-
-          <div class="form-field checkbox-field">
-            <label>
-              <input type="checkbox" id="mem-consent" required />
-              <span>
-                I agree that 6Sense can store this content and may contact me if it’s used in any visuals or campaigns.
-              </span>
-            </label>
-          </div>
-
-          <button type="submit" class="btn primary full-width">
-            submit memory
-          </button>
-
-          <p class="form-message" id="memories-message"></p>
-        </form>
+        <!-- Airtable MEMORIES form embed -->
+        <div class="form-embed">
+          <iframe
+            src="https://airtable.com/embed/appYgX8TGYjTvvd6h/shrpVObHP0d6baXxM"
+            frameborder="0"
+            style="width: 100%; height: 540px; border-radius: 18px; background: transparent;"
+          ></iframe>
+        </div>
       </div>
     </div>
 
