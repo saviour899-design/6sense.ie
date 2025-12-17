@@ -13,6 +13,7 @@
     rel="stylesheet"
   />
 
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -23,10 +24,10 @@
     <img src="bg-red.jpg" class="bg-image" alt="Background" />
   </div>
 
-  <!-- Instagram icon -->
+  <!-- Instagram -->
   <div class="socials">
     <a
-      href="https://instagram.com/6_sense.ie"
+      href="https://instagram.com/YOURINSTAGRAMHERE"
       target="_blank"
       aria-label="Instagram"
     >
@@ -34,6 +35,7 @@
     </a>
   </div>
 
+  <!-- Hero -->
   <main class="hero">
     <div class="hero-inner">
 
@@ -45,15 +47,19 @@
         <p class="hero-community">FEEL THE FIVE.</p>
 
         <div class="hero-actions">
-          <button class="btn primary" id="open-signup">join the list</button>
-          <button class="btn ghost" id="open-memories">upload your memories</button>
+          <button class="btn primary" id="open-signup">
+            join the list
+          </button>
+          <button class="btn ghost" id="open-memories">
+            upload your memories
+          </button>
         </div>
       </section>
 
     </div>
   </main>
 
-  <!-- SIGN UP MODAL -->
+  <!-- JOIN THE LIST MODAL -->
   <div class="modal" id="signup-modal" aria-hidden="true">
     <div class="modal-backdrop" data-close="signup"></div>
 
@@ -61,19 +67,39 @@
       <button class="modal-close" data-close="signup">×</button>
 
       <h2 class="modal-title">Join the list</h2>
-      <p class="modal-subtitle">Early access to drops & events.</p>
+      <p class="modal-subtitle">
+        Early access to drops & events.
+      </p>
 
       <form id="signup-form" class="form">
-        <input name="name" type="text" placeholder="Name" required />
-        <input name="email" type="email" placeholder="Email" required />
-        <input name="phone" type="tel" placeholder="Phone number" />
-        <button type="submit" class="btn primary full-width">join</button>
+        <input
+          name="name"
+          type="text"
+          placeholder="Name"
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          name="phone"
+          type="tel"
+          placeholder="Phone number"
+        />
+
+        <button type="submit" class="btn primary full-width">
+          join
+        </button>
+
         <p class="form-message" id="signup-message"></p>
       </form>
     </div>
   </div>
 
-  <!-- MEMORIES MODAL -->
+  <!-- UPLOAD MEMORIES MODAL -->
   <div class="modal" id="memories-modal" aria-hidden="true">
     <div class="modal-backdrop" data-close="memories"></div>
 
@@ -81,29 +107,64 @@
       <button class="modal-close" data-close="memories">×</button>
 
       <h2 class="modal-title">Upload your memories</h2>
-      <p class="modal-subtitle">Photos, clips, flyers.</p>
+      <p class="modal-subtitle">
+        Photos, clips, flyers.
+      </p>
 
-      <form id="memories-form" class="form">
-        <input name="name" type="text" placeholder="Name / @handle" required />
-        <input name="email" type="email" placeholder="Email (optional)" />
-        <textarea name="caption" placeholder="Caption" required></textarea>
-        <input name="file" type="file" required />
+      <form
+        id="memories-form"
+        class="form"
+        enctype="multipart/form-data"
+      >
+        <input
+          name="name"
+          type="text"
+          placeholder="Name / @handle"
+          required
+        />
+
+        <input
+          name="email"
+          type="email"
+          placeholder="Email (optional)"
+        />
+
+        <textarea
+          name="caption"
+          placeholder="Caption"
+          required
+        ></textarea>
+
+        <input
+          name="file"
+          type="file"
+          required
+        />
 
         <label class="checkbox">
-          <input name="consent" type="checkbox" required />
+          <input
+            name="consent"
+            type="checkbox"
+            required
+          />
           I consent to 6Sense using this content.
         </label>
 
-       <button type="submit" class="btn primary full-width">submit</button>
-       <p class="form-message" id="memories-message"></p>
+        <button type="submit" class="btn primary full-width">
+          submit
+        </button>
+
+        <p class="form-message" id="memories-message"></p>
       </form>
     </div>
   </div>
 
+  <!-- Footer -->
   <footer class="site-footer">
     © 2025 6Sense. All Rights Reserved.
   </footer>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
