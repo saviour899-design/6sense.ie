@@ -2,55 +2,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupModal = document.getElementById("signup-modal");
   const memoriesModal = document.getElementById("memories-modal");
 
-  const openSignupBtn = document.getElementById("open-signup");
-  const openMemoriesBtn = document.getElementById("open-memories");
+  document.getElementById("open-signup").onclick = () =>
+    signupModal.setAttribute("aria-hidden", "false");
 
-  const openModal = (modal) => {
-    if (modal) modal.setAttribute("aria-hidden", "false");
-  };
+  document.getElementById("open-memories").onclick = () =>
+    memoriesModal.setAttribute("aria-hidden", "false");
 
-  const closeModal = (modal) => {
-    if (modal) modal.setAttribute("aria-hidden", "true");
-  };
+  document.querySelectorAll("[data-close='signup']").forEach(el =>
+    el.onclick = () => signupModal.setAttribute("aria-hidden", "true")
+  );
 
-  // Open buttons
-  if (openSignupBtn && signupModal) {
-    openSignupBtn.addEventListener("click", () => openModal(signupModal));
-  }
+  document.querySelectorAll("[data-close='memories']").forEach(el =>
+    el.onclick = () => memoriesModal.setAttribute("aria-hidden", "true")
+  );
 
-  if (openMemoriesBtn && memoriesModal) {
-    openMemoriesBtn.addEventListener("click", () => openModal(memoriesModal));
-  }
-
-  // Close via [data-close]
-  document.querySelectorAll("[data-close='signup']").forEach((el) => {
-    el.addEventListener("click", () => closeModal(signupModal));
-  });
-
-  document.querySelectorAll("[data-close='memories']").forEach((el) => {
-    el.addEventListener("click", () => closeModal(memoriesModal));
-  });
-
-  // Close on ESC key
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", e => {
     if (e.key === "Escape") {
-      closeModal(signupModal);
-      closeModal(memoriesModal);
+      signupModal.setAttribute("aria-hidden", "true");
+      memoriesModal.setAttribute("aria-hidden", "true");
     }
   });
 
-  // Close when clicking the dark backdrop
-  document.querySelectorAll(".modal").forEach((modal) => {
-    modal.addEventListener("click", (e) => {
-      if (e.target.classList.contains("modal-backdrop")) {
-        if (modal.id === "signup-modal") closeModal(signupModal);
-        if (modal.id === "memories-modal") closeModal(memoriesModal);
-      }
-    });
-  });
+  document.getElementById("signup-form").onsubmit = e => {
+    e.preventDefault();
+    document.getElementById("signup-message").textContent =
+      "You're on the list.";
+    e.target.reset();
+  };
 
-  // Prevent clicks inside dialog from closing modal
-  document.querySelectorAll(".modal-dialog").forEach((dialog) => {
-    dialog.addEventListener("click", (e) => e.stopPropagation());
-  });
+  document.getElementById("memories-form").onsubmit = e => {
+    e.preventDefault();
+    document.getElementById("memories-message").textContent =
+      "Memory received.";
+    e.target.reset();
+  };
 });
