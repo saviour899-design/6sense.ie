@@ -64,10 +64,9 @@
       <p class="modal-subtitle">Early access to drops & events.</p>
 
       <form id="signup-form" class="form">
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email" required />
-        <input type="tel" placeholder="Phone number" />
-
+        <input name="name" type="text" placeholder="Name" required />
+        <input name="email" type="email" placeholder="Email" required />
+        <input name="phone" type="tel" placeholder="Phone number" />
         <button type="submit" class="btn primary full-width">join</button>
         <p class="form-message" id="signup-message"></p>
       </form>
@@ -85,17 +84,18 @@
       <p class="modal-subtitle">Photos, clips, flyers.</p>
 
       <form id="memories-form" class="form">
-        <input type="text" placeholder="Name / @handle" required />
-        <textarea placeholder="Caption" required></textarea>
-        <input type="file" required />
+        <input name="name" type="text" placeholder="Name / @handle" required />
+        <input name="email" type="email" placeholder="Email (optional)" />
+        <textarea name="caption" placeholder="Caption" required></textarea>
+        <input name="file" type="file" required />
 
         <label class="checkbox">
-          <input type="checkbox" required />
+          <input name="consent" type="checkbox" required />
           I consent to 6Sense using this content.
         </label>
 
-        <button type="submit" class="btn primary full-width">submit</button>
-        <p class="form-message" id="memories-message"></p>
+       <button type="submit" class="btn primary full-width">submit</button>
+       <p class="form-message" id="memories-message"></p>
       </form>
     </div>
   </div>
