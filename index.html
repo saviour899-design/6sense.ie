@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>6Sense | Early Access</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="6Sense — Sign up for early access and share your memories."
-  />
+  <title>6Sense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
     rel="stylesheet"
   />
 
@@ -22,101 +18,91 @@
 
 <body class="fade-in">
 
-  <!-- Fullscreen red background image -->
+  <!-- Background -->
   <div class="bg-wrap">
-    <img src="bg-red.jpg" alt="Background red texture" class="bg-image" />
+    <img src="bg-red.jpg" class="bg-image" alt="Background" />
   </div>
 
-  <!-- Main page content -->
-  <div class="page">
-
-    <!-- HERO -->
-    <main class="hero">
-      <div class="hero-inner">
-
-        <!-- Logo -->
-        <header class="hero-header">
-          <div class="brand">
-            <img src="logo-6sense.png" alt="6Sense logo" class="brand-logo" />
-          </div>
-        </header>
-
-        <!-- Tagline + buttons -->
-        <section class="hero-content">
-          <p class="hero-community">FEEL THE FIVE.</p>
-
-          <div class="hero-actions">
-            <button class="btn primary" id="open-signup">
-              Join the list
-            </button>
-            <button class="btn ghost" id="open-memories">
-              Upload your memories
-            </button>
-          </div>
-        </section>
-
-      </div>
-    </main>
-
-    <!-- Instagram icon -->
-    <div class="socials">
-      <a href="https://instagram.com/6_sense.ie" target="_blank">
-        <img src="instagram.svg" class="insta-icon" alt="Instagram" />
-      </a>
-    </div>
-
-    <!-- SIGN UP MODAL -->
-    <div class="modal" id="signup-modal" aria-hidden="true">
-      <div class="modal-backdrop" data-close="signup"></div>
-
-      <div class="modal-dialog" role="dialog" aria-modal="true">
-        <button class="modal-close" aria-label="Close" data-close="signup">×</button>
-
-        <h2 class="modal-title">Join the list</h2>
-        <p class="modal-subtitle">
-          Get early access to drops, tickets, and private announcements.
-        </p>
-
-        <!-- Airtable JOIN LIST form embed -->
-        <div class="form-embed">
-          <iframe
-            src="https://airtable.com/embed/appYgX8TGYjTvvd6h/shrun6QB8CPZspSVK"
-            frameborder="0"
-            style="width: 100%; height: 430px; border-radius: 18px; background: transparent;"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- UPLOAD MEMORIES MODAL -->
-    <div class="modal" id="memories-modal" aria-hidden="true">
-      <div class="modal-backdrop" data-close="memories"></div>
-
-      <div class="modal-dialog" role="dialog" aria-modal="true">
-        <button class="modal-close" aria-label="Close" data-close="memories">×</button>
-
-        <h2 class="modal-title">Upload your memories</h2>
-        <p class="modal-subtitle">
-          Share photos, clips, or flyers from 6Sense moments.
-        </p>
-
-        <!-- Airtable MEMORIES form embed -->
-        <div class="form-embed">
-          <iframe
-            src="https://airtable.com/embed/appYgX8TGYjTvvd6h/shrpVObHP0d6baXxM"
-            frameborder="0"
-            style="width: 100%; height: 540px; border-radius: 18px; background: transparent;"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <p>© 2025 6Sense. All Rights Reserved.</p>
-    </footer>
-
+  <!-- Instagram icon -->
+  <div class="socials">
+    <a
+      href="https://instagram.com/6_sense.ie"
+      target="_blank"
+      aria-label="Instagram"
+    >
+      <img src="instagram.svg" alt="Instagram" class="insta-icon" />
+    </a>
   </div>
+
+  <main class="hero">
+    <div class="hero-inner">
+
+      <header class="hero-header">
+        <img src="logo-6sense.png" class="brand-logo" alt="6Sense" />
+      </header>
+
+      <section class="hero-content">
+        <p class="hero-community">FEEL THE FIVE.</p>
+
+        <div class="hero-actions">
+          <button class="btn primary" id="open-signup">join the list</button>
+          <button class="btn ghost" id="open-memories">upload your memories</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- SIGN UP MODAL -->
+  <div class="modal" id="signup-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="signup"></div>
+
+    <div class="modal-dialog">
+      <button class="modal-close" data-close="signup">×</button>
+
+      <h2 class="modal-title">Join the list</h2>
+      <p class="modal-subtitle">Early access to drops & events.</p>
+
+      <form id="signup-form" class="form">
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="tel" placeholder="Phone number" />
+
+        <button type="submit" class="btn primary full-width">join</button>
+        <p class="form-message" id="signup-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- MEMORIES MODAL -->
+  <div class="modal" id="memories-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="memories"></div>
+
+    <div class="modal-dialog">
+      <button class="modal-close" data-close="memories">×</button>
+
+      <h2 class="modal-title">Upload your memories</h2>
+      <p class="modal-subtitle">Photos, clips, flyers.</p>
+
+      <form id="memories-form" class="form">
+        <input type="text" placeholder="Name / @handle" required />
+        <textarea placeholder="Caption" required></textarea>
+        <input type="file" required />
+
+        <label class="checkbox">
+          <input type="checkbox" required />
+          I consent to 6Sense using this content.
+        </label>
+
+        <button type="submit" class="btn primary full-width">submit</button>
+        <p class="form-message" id="memories-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    © 2025 6Sense. All Rights Reserved.
+  </footer>
 
   <script src="script.js"></script>
 </body>
