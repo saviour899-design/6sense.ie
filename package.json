@@ -1,0 +1,8 @@
+{
+  "name": "6sense-site",
+  "private": true,
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.6",
+    "busboy": "^1.6.0"
+  }
+}
