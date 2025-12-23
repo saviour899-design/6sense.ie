@@ -32,7 +32,7 @@ body.no-scroll { overflow: hidden; }
 .hero-card{
   width: min(92vw, 520px);
   border-radius: 28px;
-  padding: 38px 24px 20px;
+  padding: 44px 24px 20px;
   text-align: center;
   color: #f3f3f3;
 
@@ -45,48 +45,49 @@ body.no-scroll { overflow: hidden; }
 .logo-wrap{
   display: grid;
   place-items: center;
-  gap: 10px;
 }
 
+/* ✅ Bigger logo like your 2nd photo */
 .logo{
-  width: 72px;
-  height: 72px;
+  width: 190px;
+  height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,.45));
+  filter: drop-shadow(0 12px 26px rgba(0,0,0,.45));
 }
 
-.brand{
-  margin: 0;
-  letter-spacing: 0.18em;
-  font-weight: 700;
-}
-
-/* ✅ Instagram icon centered directly under brand */
-.ig-link{
-  margin-top: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  color: rgba(255,255,255,0.88);
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.06);
-}
-
+/* Tagline */
 .tagline{
-  margin: 22px 0 14px;
+  margin: 22px 0 10px;
   letter-spacing: 0.22em;
   font-size: 0.92rem;
   opacity: 0.9;
 }
 
+/* ✅ Instagram icon under tagline */
+.ig-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+}
+
+.ig-under-tagline{
+  margin: 6px 0 18px;
+}
+
+/* Buttons */
 .cta-wrap{
   display: grid;
   gap: 14px;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .btn{
@@ -158,7 +159,7 @@ body.no-scroll { overflow: hidden; }
   cursor: pointer;
 }
 
-/* ✅ Your spacing fix (applies to BOTH modals) */
+/* ✅ Consistent spacing for BOTH modals */
 .modal-title{
   margin: 4px 0 10px;
   font-size: 2rem;
@@ -194,6 +195,7 @@ body.no-scroll { overflow: hidden; }
 }
 
 @media (max-width: 420px){
+  .logo{ width: 175px; }
+  .hero-card{ padding: 40px 18px 18px; }
   .modal-title{ font-size: 1.7rem; }
-  .hero-card{ padding: 34px 18px 18px; }
 }
