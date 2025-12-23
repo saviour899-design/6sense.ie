@@ -4,27 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>6Sense</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
   <main class="main-wrapper">
     <section class="hero-card">
+
+      <!-- ✅ Big logo only (no extra "6SENSE" text) -->
       <div class="logo-wrap">
         <img class="logo" src="logo-6sense.png" alt="6Sense logo" />
-        <h1 class="brand">6SENSE</h1>
-
-        <!-- ✅ Instagram icon in the middle under 6SENSE -->
-        <a class="ig-link" href="https://instagram.com/6_sense.ie" target="_blank" rel="noreferrer" aria-label="Instagram">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M12 16.1a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2Z" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M17.6 6.4h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-        </a>
       </div>
 
       <p class="tagline">FEEL BEYOND THE FIVE.</p>
+
+      <!-- ✅ Instagram icon under tagline -->
+      <a class="ig-link ig-under-tagline"
+         href="https://instagram.com/6_sense.ie"
+         target="_blank"
+         rel="noreferrer"
+         aria-label="6Sense Instagram">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M12 16.1a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2Z" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M17.6 6.4h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </a>
 
       <div class="cta-wrap">
         <button class="btn btn-primary" id="openJoin">Join The List</button>
@@ -97,12 +102,14 @@
     openUpload.addEventListener('click', () => openModal(uploadModal));
     closeUpload.addEventListener('click', () => closeModal(uploadModal));
 
+    // Close when clicking outside modal
     [joinModal, uploadModal].forEach(modal => {
       modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal(modal);
       });
     });
 
+    // ESC closes
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeModal(joinModal);
