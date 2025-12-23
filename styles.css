@@ -23,9 +23,8 @@ body.no-scroll { overflow: hidden; }
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
            env(safe-area-inset-bottom) env(safe-area-inset-left);
 
-  background: radial-gradient(1200px 800px at 50% 20%, rgba(170, 20, 20, .55), transparent 60%),
-              radial-gradient(900px 700px at 60% 60%, rgba(90, 0, 0, .55), transparent 55%),
-              linear-gradient(180deg, #140000, #07070a);
+  background: url("bg-red.jpg") center / cover no-repeat;
+
 }
 
 /* ---------- Hero Card ---------- */
