@@ -1,114 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>6Sense</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="fade-in">
+<body>
+  <main class="main-wrapper">
+    <section class="hero-card">
+      <div class="logo-wrap">
+        <img class="logo" src="assets/6sense-logo.png" alt="6Sense logo" />
+        <h1 class="brand">6SENSE</h1>
 
-  <!-- Background -->
-  <div class="bg-wrap">
-    <img src="bg-red.jpg" class="bg-image" alt="Background" />
-  </div>
-
-  <!-- HERO -->
-  <main class="hero">
-    <div class="hero-inner">
-
-      <!-- Logo -->
-      <img src="logo-6sense.png" class="brand-logo" alt="6Sense" />
-
-      <!-- Tagline -->
-      <p class="hero-community">FEEL BEYOND THE FIVE.</p>
-
-      <!-- Instagram (CENTERED UNDER LOGO) -->
-      <a
-        href="https://instagram.com/6_sense.ie"
-        target="_blank"
-        class="instagram-center"
-        aria-label="6Sense Instagram"
-      >
-        <img src="instagram.svg" alt="Instagram" />
-      </a>
-
-      <!-- Buttons -->
-      <div class="hero-actions">
-        <button class="btn primary" id="open-signup">
-          Join The List
-        </button>
-        <button class="btn ghost" id="open-memories">
-          Upload Your Memories
-        </button>
+        <!-- ✅ Instagram icon in the middle under 6SENSE -->
+        <a class="ig-link" href="https://instagram.com/6_sense.ie" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M12 16.1a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2Z" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M17.6 6.4h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </a>
       </div>
 
-    </div>
+      <p class="tagline">FEEL BEYOND THE FIVE.</p>
+
+      <div class="cta-wrap">
+        <button class="btn btn-primary" id="openJoin">Join The List</button>
+        <button class="btn btn-outline" id="openUpload">Upload Your Memories</button>
+      </div>
+
+      <footer class="copyright">© 2025 6Sense. All Rights Reserved.</footer>
+    </section>
   </main>
 
-  <!-- JOIN THE LIST MODAL -->
-  <div class="modal" id="signup-modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close="signup"></div>
+  <!-- JOIN MODAL -->
+  <div class="modal-overlay" id="joinModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="joinTitle">
+      <button class="modal-close" id="closeJoin" aria-label="Close">×</button>
 
-    <div class="modal-dialog">
-      <button class="modal-close" data-close="signup">×</button>
+      <h2 class="modal-title" id="joinTitle">Join the list</h2>
+      <p class="modal-subtitle">Early access to drops &amp; events</p>
 
-      <h2 class="modal-title">Join the list</h2>
-      <p class="modal-subtitle">Early access to drops & events.</p>
-
-      <form id="signup-form" class="form">
-        <input name="name" type="text" placeholder="Name" required />
-        <input name="email" type="email" placeholder="Email" required />
-        <input name="phone" type="tel" placeholder="Phone number" />
-
-        <button type="submit" class="btn primary full-width">join</button>
-        <p class="form-message" id="signup-message"></p>
+      <form class="form">
+        <input class="input" type="text" name="name" placeholder="Name" autocomplete="name" required />
+        <input class="input" type="email" name="email" placeholder="Email" autocomplete="email" required />
+        <input class="input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel" />
+        <button class="btn btn-primary btn-full" type="submit">join</button>
       </form>
     </div>
   </div>
 
-  <!-- UPLOAD MEMORIES MODAL -->
-  <div class="modal" id="memories-modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close="memories"></div>
+  <!-- UPLOAD MODAL -->
+  <div class="modal-overlay" id="uploadModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="uploadTitle">
+      <button class="modal-close" id="closeUpload" aria-label="Close">×</button>
 
-    <div class="modal-dialog">
-      <button class="modal-close" data-close="memories">×</button>
+      <h2 class="modal-title" id="uploadTitle">Upload your memories</h2>
+      <p class="modal-subtitle">Share moments for curated drops &amp; invites</p>
 
-      <h2 class="modal-title">Upload your memories</h2>
-      <p class="modal-subtitle">Photos, clips, flyers.</p>
-
-      <form id="memories-form" class="form" enctype="multipart/form-data">
-        <input name="name" type="text" placeholder="Name / @handle" required />
-        <input name="email" type="email" placeholder="Email (optional)" />
-        <textarea name="caption" placeholder="Caption" required></textarea>
-        <input name="file" type="file" required />
-
-        <label class="checkbox">
-          <input name="consent" type="checkbox" required />
-          I consent to 6Sense using this content.
-        </label>
-
-        <button type="submit" class="btn primary full-width">submit</button>
-        <p class="form-message" id="memories-message"></p>
+      <form class="form">
+        <input class="input" type="text" name="fullName" placeholder="Name" autocomplete="name" required />
+        <input class="input" type="email" name="email2" placeholder="Email" autocomplete="email" required />
+        <input class="input" type="file" name="file" />
+        <button class="btn btn-primary btn-full" type="submit">upload</button>
       </form>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    © 2025 6Sense. All Rights Reserved.
-  </footer>
+  <script>
+    const joinModal = document.getElementById('joinModal');
+    const uploadModal = document.getElementById('uploadModal');
 
-  <script src="script.js"></script>
+    const openJoin = document.getElementById('openJoin');
+    const closeJoin = document.getElementById('closeJoin');
+
+    const openUpload = document.getElementById('openUpload');
+    const closeUpload = document.getElementById('closeUpload');
+
+    function openModal(modal) {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
+    }
+
+    openJoin.addEventListener('click', () => openModal(joinModal));
+    closeJoin.addEventListener('click', () => closeModal(joinModal));
+
+    openUpload.addEventListener('click', () => openModal(uploadModal));
+    closeUpload.addEventListener('click', () => closeModal(uploadModal));
+
+    [joinModal, uploadModal].forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal(modal);
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal(joinModal);
+        closeModal(uploadModal);
+      }
+    });
+  </script>
 </body>
 </html>
