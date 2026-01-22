@@ -13,197 +13,163 @@
 </head>
 
 <body>
-  <!-- subtle Apple-vibe background auras -->
-  <div class="aura aura-1" aria-hidden="true"></div>
-  <div class="aura aura-2" aria-hidden="true"></div>
 
-  <!-- TOP NAV -->
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="Go to top">
-      <img class="brand-logo" src="logo-6sense.png" alt="6Sense logo">
-      <span class="brand-name">6Sense</span>
-    </a>
-
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="nav-link" href="#about" data-section="about">About</a>
-      <a class="nav-link" href="#gallery" data-section="gallery">Gallery</a>
-      <a class="nav-link" href="#contact" data-section="contact">Contact</a>
-    </nav>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a class="mobile-link" href="#about">About</a>
-    <a class="mobile-link" href="#gallery">Gallery</a>
-    <a class="mobile-link" href="#contact">Contact</a>
+  <!-- ✅ TOP RIGHT MENU BUTTONS -->
+  <div class="top-menu">
+    <a class="top-link" href="#about">About</a>
+    <a class="top-link" href="#gallery">Gallery</a>
+    <a class="top-link" href="#contact">Contact</a>
   </div>
 
-  <!-- HERO -->
-  <main class="page">
-    <section id="home" class="hero">
-      <div class="main-wrapper">
-        <section class="hero-card reveal">
-          <div class="logo-wrap">
-            <img class="logo shimmer" src="logo-6sense.png" alt="6Sense logo" />
-          </div>
+  <main class="main-wrapper">
+    <section class="hero-card">
 
-          <p class="tagline reveal delay-1">FEEL BEYOND THE FIVE.</p>
-
-          <a class="ig-link ig-under-tagline reveal delay-2"
-             href="https://instagram.com/6_sense.ie"
-             target="_blank"
-             rel="noreferrer"
-             aria-label="6Sense Instagram">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="currentColor" stroke-width="1.7"/>
-              <path d="M12 16.1a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2Z" stroke="currentColor" stroke-width="1.7"/>
-              <path d="M17.6 6.4h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-          </a>
-
-          <div class="cta-wrap reveal delay-3">
-            <!-- IDs MATCH YOUR JS -->
-            <button class="btn btn-primary" id="open-signup">Join The List</button>
-            <button class="btn btn-outline" id="open-memories">Upload Your Memories</button>
-          </div>
-
-          <footer class="copyright">© <span id="year"></span> 6Sense. All Rights Reserved.</footer>
-        </section>
+      <!-- ✅ Big logo only (no extra "6SENSE" text) -->
+      <div class="logo-wrap">
+        <img class="logo" src="logo-6sense.png" alt="6Sense logo" />
       </div>
 
-      <div class="scroll-hint" aria-hidden="true">
-        <span class="scroll-line"></span>
-        <span class="scroll-text">Scroll</span>
+      <p class="tagline">FEEL BEYOND THE FIVE.</p>
+
+      <!-- ✅ Instagram icon under tagline -->
+      <a class="ig-link ig-under-tagline"
+         href="https://instagram.com/6_sense.ie"
+         target="_blank"
+         rel="noreferrer"
+         aria-label="6Sense Instagram">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M12 16.1a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2Z" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M17.6 6.4h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </a>
+
+      <div class="cta-wrap">
+        <button class="btn btn-primary" id="openJoin">Join The List</button>
+        <button class="btn btn-outline" id="openUpload">Upload Your Memories</button>
       </div>
+
+      <footer class="copyright">© 2025 6Sense. All Rights Reserved.</footer>
     </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title reveal">About 6sense</h2>
-        <p class="section-lead reveal">
-          6sense is an experience where sound becomes movement and rhythm becomes feeling.
-          We create spaces where music is not just heard, but felt - in the body, the mind and the soul. 
-          Every set, every rhytm, every vocal is curated to awaken emotion, connection and collective energy.
-          6sense is more than just music. 
-          It is a frequency. 
-          A moevement. 
-          A new sense. 
-        </p>
-
-        <div class="cards">
-          <article class="card reveal">
-            <h3>Vision</h3>
-            <p>Luxury minimalism with a message: move with intention.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Energy</h3>
-            <p>Feel beyond the five — trust your instincts and elevate your lifestyle.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Quality</h3>
-            <p>Every detail is intentional. No clutter. No noise.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery" class="section alt">
-      <div class="container">
-        <h2 class="section-title reveal">Gallery</h2>
-        <p class="section-lead reveal">Replace these with product shots, shoots, moodboard, drops.</p>
-
-        <div class="gallery-grid">
-          <div class="tile reveal"><div class="tile-inner">Image 1</div></div>
-          <div class="tile reveal"><div class="tile-inner">Image 2</div></div>
-          <div class="tile reveal"><div class="tile-inner">Image 3</div></div>
-          <div class="tile reveal"><div class="tile-inner">Image 4</div></div>
-          <div class="tile reveal"><div class="tile-inner">Image 5</div></div>
-          <div class="tile reveal"><div class="tile-inner">Image 6</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-title reveal">Contact</h2>
-        <p class="section-lead reveal">
-          Collaborations, brand opportunities, or early access. Hit us on Instagram or join the list.
-        </p>
-
-        <div class="contact-grid">
-          <div class="contact-card reveal">
-            <h3>Instagram</h3>
-            <a class="contact-link" href="https://instagram.com/6_sense.ie" target="_blank" rel="noreferrer">
-              @6_sense.ie
-            </a>
-          </div>
-
-          <div class="contact-card reveal">
-            <h3>Email</h3>
-            <p class="muted">Add your email here</p>
-          </div>
-
-          <div class="contact-card reveal">
-            <h3>Join</h3>
-            <button class="btn btn-primary btn-tight" id="open-signup-2" type="button">Join The List</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <span>© <span id="year2"></span> 6Sense</span>
-        <a class="to-top" href="#home">Back to top</a>
-      </div>
-    </footer>
   </main>
 
-  <!-- SIGNUP MODAL (IDs MATCH YOUR JS) -->
-  <div class="modal-overlay" id="signup-modal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="signupTitle">
-      <button class="modal-close" data-close="signup" aria-label="Close">×</button>
+  <!-- ✅ ABOUT SECTION -->
+  <section id="about" class="info-section">
+    <div class="info-card">
+      <h2>About 6sense</h2>
+      <p>
+        6sense is a premium lifestyle brand built on intuition, presence, and clean design.
+        Feel beyond the five — trust your instincts and move with intention.
+      </p>
+    </div>
+  </section>
 
-      <h2 class="modal-title" id="signupTitle">Join the list</h2>
+  <!-- ✅ GALLERY SECTION -->
+  <section id="gallery" class="info-section">
+    <div class="info-card">
+      <h2>Gallery</h2>
+      <p class="info-subtext">Replace these tiles with your product photos, shoots, and moodboard.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-tile">Image 1</div>
+        <div class="gallery-tile">Image 2</div>
+        <div class="gallery-tile">Image 3</div>
+        <div class="gallery-tile">Image 4</div>
+        <div class="gallery-tile">Image 5</div>
+        <div class="gallery-tile">Image 6</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ CONTACT SECTION -->
+  <section id="contact" class="info-section">
+    <div class="info-card">
+      <h2>Contact</h2>
+      <p>
+        For collaborations, drops, or events — message us on Instagram:
+        <a class="contact-link" href="https://instagram.com/6_sense.ie" target="_blank" rel="noreferrer">
+          @6_sense.ie
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- JOIN MODAL -->
+  <div class="modal-overlay" id="joinModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="joinTitle">
+      <button class="modal-close" id="closeJoin" aria-label="Close">×</button>
+
+      <h2 class="modal-title" id="joinTitle">Join the list</h2>
       <p class="modal-subtitle">Early access to drops &amp; events</p>
 
-      <form class="form" id="signup-form">
+      <form class="form">
         <input class="input" type="text" name="name" placeholder="Name" autocomplete="name" required />
         <input class="input" type="email" name="email" placeholder="Email" autocomplete="email" required />
         <input class="input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel" />
         <button class="btn btn-primary btn-full" type="submit">join</button>
-
-        <p class="form-message" id="signup-message" aria-live="polite"></p>
       </form>
     </div>
   </div>
 
-  <!-- MEMORIES MODAL (IDs MATCH YOUR JS) -->
-  <div class="modal-overlay" id="memories-modal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="memoriesTitle">
-      <button class="modal-close" data-close="memories" aria-label="Close">×</button>
+  <!-- UPLOAD MODAL -->
+  <div class="modal-overlay" id="uploadModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="uploadTitle">
+      <button class="modal-close" id="closeUpload" aria-label="Close">×</button>
 
-      <h2 class="modal-title" id="memoriesTitle">Upload your memories</h2>
+      <h2 class="modal-title" id="uploadTitle">Upload your memories</h2>
       <p class="modal-subtitle">Share moments for curated drops &amp; invites</p>
 
-      <form class="form" id="memories-form">
+      <form class="form">
         <input class="input" type="text" name="fullName" placeholder="Name" autocomplete="name" required />
         <input class="input" type="email" name="email2" placeholder="Email" autocomplete="email" required />
         <input class="input" type="file" name="file" />
-
         <button class="btn btn-primary btn-full" type="submit">upload</button>
-        <p class="form-message" id="memories-message" aria-live="polite"></p>
       </form>
     </div>
   </div>
 
-  <script src="./script.js"></script>
+  <script>
+    const joinModal = document.getElementById('joinModal');
+    const uploadModal = document.getElementById('uploadModal');
+
+    const openJoin = document.getElementById('openJoin');
+    const closeJoin = document.getElementById('closeJoin');
+
+    const openUpload = document.getElementById('openUpload');
+    const closeUpload = document.getElementById('closeUpload');
+
+    function openModal(modal) {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
+    }
+
+    openJoin.addEventListener('click', () => openModal(joinModal));
+    closeJoin.addEventListener('click', () => closeModal(joinModal));
+
+    openUpload.addEventListener('click', () => openModal(uploadModal));
+    closeUpload.addEventListener('click', () => closeModal(uploadModal));
+
+    // Close when clicking outside modal
+    [joinModal, uploadModal].forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal(modal);
+      });
+    });
+
+    // ESC closes
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal(joinModal);
+        closeModal(uploadModal);
+      }
+    });
+  </script>
 </body>
 </html>
