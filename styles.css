@@ -11,38 +11,7 @@ html, body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
 
-html{
-  scroll-behavior: smooth;
-}
-
 body.no-scroll { overflow: hidden; }
-
-/* ✅ TOP RIGHT MENU */
-.top-menu{
-  position: fixed;
-  top: 18px;
-  right: 18px;
-  display: flex;
-  gap: 10px;
-  z-index: 20;
-}
-
-.top-link{
-  text-decoration: none;
-  color: rgba(255,255,255,0.92);
-  font-size: 0.92rem;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(10, 10, 16, 0.40);
-  backdrop-filter: blur(14px);
-  transition: transform 180ms ease, background 180ms ease;
-}
-
-.top-link:hover{
-  transform: translateY(-2px);
-  background: rgba(255,255,255,0.08);
-}
 
 /* ✅ Full screen background + iOS safe-area fix */
 .main-wrapper{
@@ -55,6 +24,7 @@ body.no-scroll { overflow: hidden; }
            env(safe-area-inset-bottom) env(safe-area-inset-left);
 
   background: url("bg-red.jpg") center / cover no-repeat;
+
 }
 
 /* ---------- Hero Card ---------- */
@@ -147,76 +117,6 @@ body.no-scroll { overflow: hidden; }
   opacity: 0.75;
 }
 
-/* ---------- INFO SECTIONS ---------- */
-.info-section{
-  padding: 80px 16px;
-  background: #0b0b0f;
-}
-
-.info-card{
-  width: min(92vw, 900px);
-  margin: 0 auto;
-  border-radius: 22px;
-  padding: 26px 18px;
-
-  background: rgba(10, 10, 16, 0.62);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 18px 60px rgba(0,0,0,.35);
-  backdrop-filter: blur(14px);
-
-  color: rgba(255,255,255,0.92);
-}
-
-.info-card h2{
-  margin: 0 0 12px;
-  font-size: 1.8rem;
-}
-
-.info-card p{
-  margin: 0;
-  opacity: 0.85;
-  line-height: 1.6;
-}
-
-.info-subtext{
-  margin-top: 6px;
-  opacity: 0.65;
-  font-size: 0.95rem;
-}
-
-/* Gallery grid */
-.gallery-grid{
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.gallery-tile{
-  border-radius: 18px;
-  min-height: 140px;
-  display: grid;
-  place-items: center;
-
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.70);
-  transition: transform 200ms ease;
-}
-
-.gallery-tile:hover{
-  transform: translateY(-3px);
-}
-
-.contact-link{
-  color: #F1F063;
-  text-decoration: none;
-}
-
-.contact-link:hover{
-  text-decoration: underline;
-}
-
 /* ---------- Modal ---------- */
 .modal-overlay{
   position: fixed;
@@ -291,12 +191,6 @@ body.no-scroll { overflow: hidden; }
 
 .input::placeholder{
   color: rgba(255,255,255,0.55);
-}
-
-@media (max-width: 800px){
-  .gallery-grid{
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 420px){
